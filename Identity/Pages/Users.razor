@@ -1,0 +1,21 @@
+﻿@page "/Users"
+@attribute [Authorize]
+
+    <AuthorizeView Roles="Admin">
+        <Authorized>
+        <h3>Admins can see this</h3>
+
+        </Authorized>
+        <NotAuthorized>
+            <h3>not Admins can see this</h3>
+
+        </NotAuthorized>
+
+
+    </AuthorizeView>
+
+    <h3>Users can see this</h3>
+
+    @code {
+
+    }
