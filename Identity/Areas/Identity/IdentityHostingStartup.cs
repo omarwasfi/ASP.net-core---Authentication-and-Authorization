@@ -1,6 +1,8 @@
 ﻿using System;
 using Identity.Areas.Identity.Data;
+using Identity.Classes;
 using Identity.Data;
+using Identity.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,8 @@ namespace Identity.Areas.Identity
                     .AddEntityFrameworkStores<WAContext>();
 
                 services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
+
+                services.AddScoped<IPerson, PersonClass>();
 
                 services.Configure<IdentityOptions>(options =>
                 {
